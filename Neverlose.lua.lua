@@ -154,6 +154,36 @@ Section:Button({
     end,
 })
 
+local Section = Tab:Section({
+    text = "GodMode"
+})
+
+Section:Button({
+    text = "Enable",
+    callback = function()
+        game.Players.LocalPlayer.Character.Humanoid:Remove()
+        Instance.new('Humanoid',
+         game.Players.LocalPlayer.Character)
+        game:GetService("Workspace")
+        [game.Players.LocalPlayer.Name]:FindFirstChildOfClass(
+        'Humanoid').HipHeight = 2
+        print("Clicked button")
+    end,
+})
+
+local Section = Tab:Section({
+    text = "Joke"
+})
+
+Section:Button({
+    text = "Say",
+    callback = function()
+        game.StarterGui:SetCore("ChatMakeSystemMessage")
+            Text = "Thank you"
+        print("Clicked button")
+    end,
+})
+
 
 
 local Tab = TabSection:Tab({
